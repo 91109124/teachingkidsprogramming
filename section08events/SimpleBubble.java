@@ -1,14 +1,18 @@
 package org.teachingkidsprogramming.section08events;
 
+import org.teachingextensions.WindowUtils.ProgramWindow;
+import org.teachingextensions.logo.utils.ColorUtils.ColorWheel;
 import org.teachingextensions.logo.utils.EventUtils.MouseLeftClickListener;
+import org.teachingextensions.logo.utils.LineAndShapeUtils.Circle;
 
 public class SimpleBubble implements MouseLeftClickListener
 {
+  //field
+  ProgramWindow programWindow;
   public SimpleBubble()
   {
-    //    Create a ProgramWindow titled My Bubble --#1.1
-    //    Uncomment the line below -- #1.2
-    //    programWindow.setWindowVisible(true);
+    programWindow = new ProgramWindow("My Bubble");
+    programWindow.setWindowVisible(true);
     //    Have SimpleBubble listen for when the left mouse button is clicked in your program window --#2.2
     //    prepareColorPalette (recipe below) --#7.1
     //
@@ -27,6 +31,7 @@ public class SimpleBubble implements MouseLeftClickListener
     //     Remove previous bubbles from your program window --#9
     //     Set the radius for the circle to a random number between 10 and 50 --#2.5
     //     Create a circle with the radius and the next color from the color wheel --#2.1
+    Circle circle = new Circle(42, ColorWheel.getNextColor());
     //     Move the center of the bubble to the current position of the mouse on the window --#3
     //     Add the circle to your program window --#2.4
     //    ------------- End of createBubble recipe --#8.3
